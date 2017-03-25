@@ -7,6 +7,7 @@ import Campaign from './campaign'
 import Insights from './insights'
 import User from './user'
 import CustomAudience from './custom-audience'
+import ReachEstimate from './reach-estimate'
 
 /**
  * AdAccount
@@ -122,4 +123,7 @@ export default class AdAccount extends AbstractCrudObject {
     return this.getEdge(CustomAudience, fields, params, fetchFirstPage)
   }
 
+  getReachEstimate (fields, params, fetchFirstPage) {
+    return this.getEdge(ReachEstimate, fields, params, fetchFirstPage)
+  }
 }
