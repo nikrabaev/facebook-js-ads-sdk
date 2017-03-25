@@ -373,6 +373,9 @@ export class Cursor extends Array {
     }
 
     this._buildObjectsFromResponse = (response) => {
+      if (typeof response.data === 'object') {
+        return new this._targetClass(response.data, undefined, this._api);
+      }
       return response.data.map((item) => new this._targetClass(item, undefined, this._api))
     }
   }
